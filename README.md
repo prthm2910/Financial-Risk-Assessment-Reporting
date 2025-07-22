@@ -74,24 +74,6 @@ uv run streamlit run ui.py
 * 🔹 ESG Metrics & Insights
 * 🔹 Force-Directed Graph of risk category dependencies
 
----
-
-## 📁 Project Structure
-
-```
-.
-├── agents/                 # AI agents + FastAPI backend
-│   ├── risk_reporter.py
-│   ├── esg_reporting.py
-│   ├── knowledge_graph.py
-│   └── main.py             # FastAPI entry point
-│
-├── prompts_library/       # Static content and styles
-│   └── prompt.py          # Prompts + Streamlit CSS
-│
-├── ui.py                  # Streamlit UI
-├── requirements.txt       # Project dependencies
-```
 
 ---
 
