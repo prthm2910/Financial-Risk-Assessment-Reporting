@@ -91,7 +91,6 @@ pygments
 python-dateutil
 python-dotenv
 pytz
-pywin32
 pyyaml
 pyzmq
 referencing
