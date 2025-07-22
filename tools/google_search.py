@@ -12,8 +12,6 @@ Dependencies:
 - python-dotenv
 - langchain
 
-Author: [Your Name]
-Created: 2025-07-22
 """
 
 import json

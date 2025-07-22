@@ -63,8 +63,7 @@ COMPANY_NAMES = [
     "SBI Cards and Payment Services Limited",
     "ICICI Prudential Life Insurance Company Limited",
     "Siemens Limited",
-    "LTIMindtree Limited" # Represents merger of L&T Infotech and L&T Technology Services
-    # You can add more if a specific one is a Large Cap based on latest market data
+    "LTIMindtree Limited" 
 ]
 
  
