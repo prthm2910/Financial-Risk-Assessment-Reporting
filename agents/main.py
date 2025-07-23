@@ -32,7 +32,7 @@ app = FastAPI(
 # CORS Middleware: Allow all origins for development
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ⚠️ Restrict in production
+    allow_origins=["https://financial-risk-assessment-reporting-prthm2910.streamlit.app/"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
