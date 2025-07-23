@@ -6,6 +6,9 @@ from prompts_library.prompt import RISK_CATEGORIES, COMPANY_NAMES, STREAMLIT_CSS
 from collections import defaultdict
 import requests
 import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Custom CSS for the entire app
 st.markdown(STREAMLIT_CSS, unsafe_allow_html=True)
@@ -132,10 +135,10 @@ def results_page():
             st.error("❌ Rate limit exceeded. Please try again tomorrow.")
             return
 
-        with st.spinner("🔍 Analyzing risks and generating ESG insights... This may take a few minutes."):
+        with st.spinner("🔍 Analyzing risks and generating ESG insights... This may take a few minutes. Your Patience is highly appreciated🫡"):
             try:
                 response = requests.post(
-                    "http://127.0.0.1:8000/run_agent",
+                    os.getenv('API_ENDPOINT'),   # type: ignore
                     json={"company_name": query}
                 )
                 response.raise_for_status()

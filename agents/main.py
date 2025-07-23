@@ -99,13 +99,4 @@ def log_message(message: str):
         log_buffer.append(f"[{timestamp}] {message}")
 
 
-@app.get("/logs", response_class=PlainTextResponse)
-def get_logs():
-    """
-    Returns the current day's logs from memory.
 
-    Returns:
-        str: Newline-separated log entries.
-    """
-    with log_lock:
-        return "\n".join(log_buffer)
