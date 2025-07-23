@@ -6,6 +6,8 @@
 
 Whether you're an investor, analyst, or ESG-focused stakeholder, InsightBestAI helps you focus on decisions—not data gathering.
 
+🔗 **Live App**: [Try InsightBestAI on Streamlit](https://financial-risk-assessment-reporting-prthm2910.streamlit.app/)
+
 ---
 
 ## 🚀 Features
@@ -74,21 +76,19 @@ uv run streamlit run ui.py
 * 🔹 ESG Metrics & Insights
 * 🔹 Force-Directed Graph of risk category dependencies
 
-
 ---
 
 ## ⚠️ Known Limitations
 
 * ⏳ Output generation may take time due to Gemini's strict rate limits
-* 🧾 Markdown rendering inconsistencies inside the Streamlit's force-directed graph explanation box
+* 🧾 Markdown rendering inconsistencies due to  Streamlit's internal markdown parsing force-directed graph explanation box
 
 ---
 
 ## 🧭 Future Improvements
 
 * ⚡ Improve performance with Gemini Pro (paid tier)
-* 🔗 Add support for Gemini URL-context for more grounded and document-specific analysis
+* 🔗 Add support for Gemini URL-context for more grounded and document-specific analysis  
+* 🔝 Upgrading to the paid tier also helps overcome rate limit restrictions and results in more accurate, grounded outputs.
 
 ---
-
-
