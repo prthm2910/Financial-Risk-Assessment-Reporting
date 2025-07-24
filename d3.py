@@ -217,68 +217,9 @@ def get_graph(graphData : dict):
 </body>
 </html>
 """
-    if graphData is None:
-        graphData = {
-    "nodes": [
-        {
-            "id": 1,
-            "name": "Low Credit Risk for MRF Tyres due to Strong Credit Ratings",
-            "description": "### Logical Connection to: Operational Risk\\nStrong creditworthiness ensures uninterrupted access to supplier credit and favorable terms, streamlining the supply chain and supporting efficient working capital management.\\n\\n### Logical Connection to: Strategic Risk\\nEasier and more cost-effective access to capital enables the company to fund growth initiatives and strategic investments, enhancing long-term competitive advantage.\\n\\n"
-        },
-        {
-            "id": 2,
-            "name": "Raw Material Price Volatility and Profitability Pressures",
-            "description": "### Logical Connection to: Strategic Risk\\nVolatile raw material costs and profitability pressures necessitate strategic adjustments in product pricing, operational efficiencies, and long-term sustainability goals.\\n\\n### Logical Connection to: Credit Risk\\nDeclining net profit and operating margins due to raw material volatility can negatively impact the company's financial health and potentially its creditworthiness.\\n\\n"
-        },
-        {
-            "id": 3,
-            "name": "Strategic Risks in a Competitive and Evolving Tyre Industry",
-            "description": "### Logical Connection to: Operational Risk\\nIntense competition and evolving industry trends, such as EVs and ESG, require significant operational adaptation, R&D investment, and process optimization.\\n\\n### Logical Connection to: Compliance Risk\\nGrowing ESG concerns and evolving regulatory expectations necessitate robust compliance frameworks and proactive environmental and social initiatives.\\n\\n"
-        },
-        {
-            "id": 4,
-            "name": "Antitrust Penalty and Regulatory Compliance Challenges",
-            "description": "### Logical Connection to: Credit Risk\\nThe substantial antitrust penalty and ongoing legal expenses pose a material contingent liability, potentially impacting the company's profitability, cash reserves, and overall financial health.\\n\\n### Logical Connection to: Operational Risk\\nIncreased regulatory scrutiny and ongoing litigation divert substantial management time and legal resources, impacting operational efficiency and growth prospects.\\n\\n"
-        }
-    ],
-    "links": [
-        {
-            "source": 1,
-            "target": 2
-        },
-        {
-            "source": 1,
-            "target": 3
-        },
-        {
-            "source": 2,
-            "target": 3
-        },
-        {
-            "source": 2,
-            "target": 1
-        },
-        {
-            "source": 3,
-            "target": 2
-        },
-        {
-            "source": 3,
-            "target": 4
-        },
-        {
-            "source": 4,
-            "target": 1
-        },
-        {
-            "source": 4,
-            "target": 2
-        }
-    ]
-}
     
 
-    st.title("Corporate Network Visualization")
+    st.title(" Risk Category Inter-Dependency Visualization")
     node_colors = generate_distinct_colors(20)
     final_code = d3_graph_code.replace("{{NODE_COLORS}}", str(node_colors)).replace("{{graphData}}", str(graphData))
     return html(final_code, height=700)
