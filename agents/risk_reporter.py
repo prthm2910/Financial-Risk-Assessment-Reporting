@@ -124,7 +124,7 @@ def process_category(category: str, company_name: str) -> dict:
     retry_count = 0
     while True:
         try:
-            time.sleep(1.5)  # Prevent rapid API spamming
+            time.sleep(7)  # Prevent rapid API spamming
             start = time.time()
             response = agent.invoke({"messages": [{"role": "user", "content": prompt}]})
             end = time.time()

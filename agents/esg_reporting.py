@@ -94,7 +94,7 @@ def process_category_with_retry(category: str, company_name: str) -> dict:
     Returns:
         dict: Structured response, category, and execution time.
     """
-    time.sleep(1.5)  # avoid aggressive API calls
+    time.sleep(7)  # avoid aggressive API calls
 
     prompt = ESG_REPORTING_PROMPT.format(
         esg_category=category,
