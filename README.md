@@ -12,7 +12,7 @@ Whether you're an investor, analyst, or ESG-focused stakeholder, InsightBestAI h
 
 ## 🚀 Features
 
-* 🔍 **Financial Risk Analysis**
+* 🔍 **Financial Risk Analysis (Credit Risk, Operational Risk, Compliance Risk, Strategic Risk)**
 * ♻️ **ESG Insights (Environmental, Social, Governance)**
 * 🌐 **Force-Directed Network Graph** showing risk interdependencies
 * 🧠 Powered by Google's Gemini 2.5 Flash with grounded search
@@ -47,7 +47,7 @@ Whether you're an investor, analyst, or ESG-focused stakeholder, InsightBestAI h
 Make sure you have Python installed. Then run:
 
 ```bash
-uv sync  # (installs dependencies from pyproject.toml)
+uv sync  
 ```
 
 ### 2. Start Backend (FastAPI)
