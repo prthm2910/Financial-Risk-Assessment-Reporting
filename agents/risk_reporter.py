@@ -156,7 +156,7 @@ def fin_risk_agent(company_name: str) -> List[dict]:
         List[dict]: List of structured financial risk assessments per category.
     """
     results, response = [], []
-    with ThreadPoolExecutor(max_workers=2) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         futures = [executor.submit(process_category, cat, company_name) for cat in RISK_CATEGORIES]
         for future in as_completed(futures):
             result = future.result()

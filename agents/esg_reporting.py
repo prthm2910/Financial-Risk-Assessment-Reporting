@@ -150,7 +150,7 @@ def esg_risk_agent(company_name: str) -> List[dict]:
     """
     results, structured_response = [], []
 
-    with ThreadPoolExecutor(max_workers=2) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         futures = [
             executor.submit(process_category, cat, company_name)
             for cat in ESG_CATEGORIES
