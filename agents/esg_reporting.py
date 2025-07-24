@@ -85,17 +85,8 @@ def extract_retry_seconds_from_error(e: Exception) -> int:
 )
 def process_category_with_retry(category: str, company_name: str) -> dict:
     """
-    Invokes the Gemini agent for a single ESG category with retry logic.
-
-    Args:
-        category (str): ESG category ("Environment", "Social", "Governance").
-        company_name (str): Name of the target company.
-
-    Returns:
-        dict: Structured response, category, and execution time.
+    Invokes the Gemini agent for a single ESG category with retry logic and dynamic backoff.
     """
-    time.sleep(7)  # avoid aggressive API calls
-
     prompt = ESG_REPORTING_PROMPT.format(
         esg_category=category,
         company_name=company_name,
@@ -112,12 +103,14 @@ def process_category_with_retry(category: str, company_name: str) -> dict:
             "time": end - start
         }
     except ResourceExhausted as e:
+        # Attempt to extract Retry-After if provided
         retry_secs = extract_retry_seconds_from_error(e)
         logging.warning(f"⏳ Rate limit hit for {category}. Retrying after {retry_secs}s...")
         time.sleep(retry_secs)
-        raise e
+        raise e  # Needed for backoff to work properly
     except Exception as e:
-        raise e  # Let non-retriable errors bubble up
+        raise e
+
 
 
 def process_category(category: str, company_name: str) -> dict:

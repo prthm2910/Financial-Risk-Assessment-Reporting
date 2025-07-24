@@ -15,7 +15,8 @@ import time
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Literal, Optional
-
+import backoff # type: ignore
+from google.api_core.exceptions import ResourceExhausted
 from tools.financial_year import get_current_financial_year
 from tools.google_search import grounded_search_tool
 from prompts_library.prompt import FINANCIAL_RISK_ASSESSMENT_PROMPT, RISK_CATEGORIES
@@ -101,11 +102,15 @@ def extract_retry_seconds_from_error(e: Exception) -> Optional[int]:
 # ✅ Worker Function
 # =========================
 
+@backoff.on_exception(
+    backoff.expo,
+    ResourceExhausted,
+    max_tries=6,
+    jitter=backoff.full_jitter,
+)
 def process_category(category: str, company_name: str) -> dict:
     """
-    Processes a single risk category by invoking the agent with a tailored prompt.
-
-    Includes a retry mechanism to handle API rate limits and other transient failures.
+    Processes a single risk category by invoking the agent with retry logic for rate limits.
 
     Args:
         category (str): The financial risk category to analyze.
@@ -121,23 +126,25 @@ def process_category(category: str, company_name: str) -> dict:
         financial_year=get_current_financial_year()
     )
 
-    retry_count = 0
-    while True:
-        try:
-            time.sleep(7)  # Prevent rapid API spamming
-            start = time.time()
-            response = agent.invoke({"messages": [{"role": "user", "content": prompt}]})
-            end = time.time()
-            return {
-                "category": category,
-                "output": response["structured_response"].model_dump(),
-                "time": end - start
-            }
-        except Exception as e:
-            retry_delay = extract_retry_seconds_from_error(e) or 20
-            retry_count += 1
-            print(f"\n🔁 Retrying {category} in {retry_delay} seconds (Attempt {retry_count})...")
-            time.sleep(retry_delay)
+    try:
+        start = time.time()
+        response = agent.invoke({"messages": [{"role": "user", "content": prompt}]})
+        end = time.time()
+        return {
+            "category": category,
+            "output": response["structured_response"].model_dump(),
+            "time": end - start
+        }
+    except ResourceExhausted as e:
+        retry_delay = extract_retry_seconds_from_error(e) or 20
+        print(f"\n⚠️ Rate limit hit for {category}, retrying in {retry_delay}s...")
+        time.sleep(retry_delay)
+        raise e  # Important: re-raise for @backoff to catch
+    except Exception as e:
+        return {
+            "category": category,
+            "error": str(e)
+        }
 
 # =========================
 # ✅ Main Agent Executor
@@ -173,4 +180,5 @@ def fin_risk_agent(company_name: str) -> List[dict]:
 if __name__ == "__main__":
     import json
     # Example usage for manual testing
-    print(json.dumps(fin_risk_agent("MRF Tyres"), indent=4))
+    company_name = input("Enter company name: ")
+    print(json.dumps(fin_risk_agent(company_name=company_name), indent=4))
