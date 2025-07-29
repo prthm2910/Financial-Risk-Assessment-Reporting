@@ -45,7 +45,7 @@ Whether you're an investor, analyst, or ESG-focused stakeholder, InsightBestAI h
 The architecture behind **InsightBestAI** is designed as a modular multi-agent system built on top of LangGraph, Streamlit, and Google Gemini 2.5. It executes three intelligent agents in a coordinated flow, enabling robust, explainable, and structured analysis of financial and ESG risks, along with knowledge graph generation.
 
 ---
-## Architecture Diagram
+## 🔄 Architecture Diagram
 
 ![Multi-Agent Architecture](assets/workflow_graph.png)
 
