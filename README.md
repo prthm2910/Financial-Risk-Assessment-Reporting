@@ -45,21 +45,21 @@ Whether you're an investor, analyst, or ESG-focused stakeholder, InsightBestAI h
 The architecture behind **InsightBestAI** is designed as a modular multi-agent system built on top of LangGraph, Streamlit, and Google Gemini 2.5. It executes three intelligent agents in a coordinated flow, enabling robust, explainable, and structured analysis of financial and ESG risks, along with knowledge graph generation.
 
 ---
-### Architecture Diagram
+## Architecture Diagram
 
 ![Multi-Agent Architecture](assets/workflow_graph.png)
 
 ---
 
-### 🎯 Input
+## 🎯 Input
 
 The user provides a **listed company name** through a simple Streamlit UI.
 
 ---
 
-### 🛠️ Agent Responsibilities & Workflow
+## 🛠️ Agent Responsibilities & Workflow
 
-#### 1. 🔍 Financial Risk Assessment Agent (`risk_reporter.py`)
+### 1. 🔍 Financial Risk Assessment Agent (`risk_reporter.py`)
 
 **Purpose:** Evaluates the financial health and vulnerabilities of a company.
 
@@ -84,7 +84,7 @@ The user provides a **listed company name** through a simple Streamlit UI.
 
 ---
 
-#### 2. ♻️ ESG Reporting Agent (`esg_reporting.py`)
+### 2. ♻️ ESG Reporting Agent (`esg_reporting.py`)
 
 **Purpose:** Produces ESG (Environmental, Social, Governance) insights.
 
@@ -102,7 +102,7 @@ The user provides a **listed company name** through a simple Streamlit UI.
 
 ---
 
-#### 3. 🌐 Knowledge Graph Generator (`knowledge_graph.py`)
+### 3. 🌐 Knowledge Graph Generator (`knowledge_graph.py`)
 
 **Purpose:** Builds a **force-directed dependency graph** showing logical interconnections among the financial risks.
 
@@ -119,7 +119,7 @@ The user provides a **listed company name** through a simple Streamlit UI.
 
 ---
 
-### 🔄 Execution Flow
+## 🔄 Execution Flow
 
 ```mermaid
 flowchart TD
