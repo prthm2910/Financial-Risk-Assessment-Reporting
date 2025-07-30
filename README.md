@@ -134,7 +134,7 @@ flowchart TD
 
 ## 📽️ Demo Video
 
-[![Demo Video](assets/Thumbnail.jpg)](https://youtu.be/zUURQq8JK6s)
+![Demo Video](https://youtu.be/zUURQq8JK6s)
 
 
 ---
