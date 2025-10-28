@@ -5,7 +5,7 @@
 
 ### 📽️ 1-Minute Demo (Recommended)
 
-[**Click Here to Watch the Full Project Demo on YouTube**](https://youtu.be/zUURQq8JK6s)
+<a href="https://youtu.be/zUURQq8JK6s" target="_blank">Click Here to Watch the Full Project Demo on YouTube</a>
 
 This video shows the complete functionality, as the live app may be slow due to API rate limits.
 
