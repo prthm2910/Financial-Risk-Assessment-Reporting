@@ -146,11 +146,6 @@ flowchart TD
     C --> F[📘 ESG Report Output]
     D --> G[📡 Force-Directed Graph Output]
 ```
----
-
-## 📽️ Demo Video
-
-Click Here 👉  [Demo Video Link](https://youtu.be/zUURQq8JK6s)
 
 
 ---
