@@ -191,7 +191,7 @@ uv run streamlit run ui.py
 ## ⚠️ Known Limitations
 
 * ⏳ Output generation may take time due to Gemini's strict rate limits
-* 🧾 Markdown rendering inconsistencies due to  Streamlit's internal markdown parsing force-directed graph explanation box
+* 🧾 Markdown rendering inconsistencies due to  Streamlit's internal markdown parsing in force-directed graph explanation box
 
 ---
 
