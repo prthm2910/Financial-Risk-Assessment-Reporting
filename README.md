@@ -1,12 +1,28 @@
 # InsightBestAI
 
+
+## 🚀 Demo & Live Application
+
+### 📽️ 1-Minute Demo (Recommended)
+
+[**Click Here to Watch the Full Project Demo on YouTube**](https://youtu.be/zUURQq8JK6s)
+
+This video shows the complete functionality, as the live app may be slow due to API rate limits.
+
+### 🔗 Live Application
+
+You can also try the live application here: [**Try InsightBestAI on Streamlit**](https://financial-risk-assessment-reporting-prthm2910.streamlit.app/)
+
+**⚠️ Important Note:** This app runs on a free Streamlit tier and connects to the live Gemini API. Due to shared IP rate limits on the free tier, the app may be **very slow or take a long time to load**. For a guaranteed, 1-minute overview, **please watch the demo video above!**
+
+---
+
 ## 📌 Overview
 
 **InsightBestAI** is an AI-powered tool that streamlines financial risk analysis for professionals. Instead of manually reading through hundreds of pages of reports, articles, blogs, and PDFs, this platform scans and summarizes all relevant sources on the internet using advanced LLMs.
 
 Whether you're an investor, analyst, or ESG-focused stakeholder, InsightBestAI helps you focus on decisions—not data gathering.
 
-🔗 **Live App**: [Try InsightBestAI on Streamlit](https://financial-risk-assessment-reporting-prthm2910.streamlit.app/)
 
 ---
 
