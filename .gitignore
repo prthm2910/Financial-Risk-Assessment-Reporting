@@ -9,3 +9,11 @@ wheels/
 # Virtual environments
 .venv
 .env
+
+#PageIndex Source Code
+PageIndex/
+
+# Data and Logs
+data/
+.code-review-graphignore
+tasks/
